@@ -501,39 +501,98 @@
 // }
 
 
-public class main {
-    public static void main(String[] args) {
-        Vehicle obj;
-        obj = new Bike();
-        obj.noOfWheels = 2;
-        obj.displayTyre();
-        obj.start();
+// public class main {
+//     public static void main(String[] args) {
+//         Vehicle obj;
+//         obj = new Bike();
+//         obj.noOfWheels = 2;
+//         obj.displayTyre();
+//         obj.start();
 
-        obj = new Car();
-        obj.noOfWheels = 4;
-        obj.displayTyre();
-        obj.start();
+//         obj = new Car();
+//         obj.noOfWheels = 4;
+//         obj.displayTyre();
+//         obj.start();
         
-    }
-}
+//     }
+// }
 
-abstract class Vehicle{
-    int noOfWheels;
+// abstract class Vehicle{
+//     int noOfWheels;
 
-    void displayTyre(){
-        System.out.println("Vehicle has" + noOfWheels + "tyres");
-    }
-    abstract void start();
-}
+//     void displayTyre(){
+//         System.out.println("Vehicle has" + noOfWheels + "tyres");
+//     }
+//     abstract void start();
+// }
 
-class Car extends Vehicle {
-    void start(){
-        noOfWheels = 4;
-        System.out.println("Car Start With Key");
-    }
-}
-class Bike extends Vehicle{
-    void start(){
-        System.out.println("Bike Start With Kick");
+// class Car extends Vehicle {
+//     void start(){
+//         noOfWheels = 4;
+//         System.out.println("Car Start With Key");
+//     }
+// }
+// class Bike extends Vehicle{
+//     void start(){
+//         System.out.println("Bike Start With Kick");
+//     }
+// }
+
+
+//INTERFACES..:
+
+// public class main {
+//     public static void main(String[] args) {
+//         Car c = new BMW();
+
+//         c.start();
+//         c.stop();
+//     }
+// }
+
+// interface Car {
+//     void start();
+//     void stop();
+// }
+
+// class BMW implements Car {
+
+//     public void start() {
+//         System.out.println("Car is starting..");
+//     }
+
+//     public void stop() {
+//         System.out.println("Car is stopping..");
+//     }
+// }
+
+
+//SCANNER...:
+
+import java.util.Scanner;
+
+public class main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your name:");
+        String name = sc.nextLine();
+
+        System.out.println("Your name is:" +name);
+        sc.close();
+
+
+        System.out.println("Enter your age:");
+        int age = sc.nextInt();
+
+        System.out.println("your age is : " + age);
+
+        sc.close();
+
+        System.out.println("Enter your salary:");
+        double salary = sc.nextDouble();
+
+        System.out.println("Your salary is: " + salary);
+        sc.close();
     }
 }
