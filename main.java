@@ -569,30 +569,146 @@
 
 //SCANNER...:
 
+// import java.util.Scanner;
+
+// public class main{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+
+//         System.out.println("Enter your name:");
+//         String name = sc.nextLine();
+
+//         System.out.println("Your name is:" +name);
+//         sc.close();
+
+
+//         System.out.println("Enter your age:");
+//         int age = sc.nextInt();
+
+//         System.out.println("your age is : " + age);
+
+//         sc.close();
+
+//         System.out.println("Enter your salary:");
+//         double salary = sc.nextDouble();
+
+//         System.out.println("Your salary is: " + salary);
+//         sc.close();
+//     }
+// }
+
+
+//DATE: 24OCT 2026 
+//INTERFACE ABOUT PAYMENT METHOD..:
+
 import java.util.Scanner;
 
-public class main{
-    public static void main(String[] args){
+public class main {
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter your name:");
-        String name = sc.nextLine();
+        PaymentService service = new PaymentService();
 
-        System.out.println("Your name is:" +name);
+        System.out.println("===== PAYMENT SYSTEM =====");
+        System.out.println("1. Credit Card");
+        System.out.println("2. UPI");
+        System.out.println("3. Net Banking");
+
+        System.out.print("Choose payment method: ");
+        int choice = sc.nextInt();
+
+        System.out.print("Enter amount: ");
+        double amount = sc.nextDouble();
+        sc.nextLine();
+
+        switch (choice) {
+
+            case 1:
+                CreditCardPayment card = new CreditCardPayment();
+
+                System.out.print("Enter card number: ");
+                card.cardNumber = sc.nextLine();
+
+                service.makePayment(card, amount);
+                break;
+
+            case 2:
+                UpiPayment upi = new UpiPayment();
+
+                System.out.print("Enter UPI ID: ");
+                upi.upiId = sc.nextLine();
+
+                service.makePayment(upi, amount);
+                break;
+
+            case 3:
+                NetBankingPayment bank = new NetBankingPayment();
+
+                System.out.print("Enter bank name: ");
+                bank.bankName = sc.nextLine();
+
+                service.makePayment(bank, amount);
+                break;
+
+            default:
+                System.out.println("Invalid payment choice!");
+        }
+
         sc.close();
+    }
+}
 
+interface IPayment {
+    void paymentProcess(double amount);
+    void generateReceipt();
+}
 
-        System.out.println("Enter your age:");
-        int age = sc.nextInt();
+class CreditCardPayment implements IPayment {
+    String cardNumber;
 
-        System.out.println("your age is : " + age);
+    public void paymentProcess(double amount) {
+        System.out.println("Processing Credit Card Payment: Rs. " + amount);
+        System.out.println("Card Number: " + cardNumber);
+        System.out.println("Payment Successful!");
+    }
 
-        sc.close();
+    public void generateReceipt() {
+        System.out.println("Credit Card Receipt Generated.");
+    }
+}
 
-        System.out.println("Enter your salary:");
-        double salary = sc.nextDouble();
+class UpiPayment implements IPayment {
+    String upiId;
 
-        System.out.println("Your salary is: " + salary);
-        sc.close();
+    public void paymentProcess(double amount) {
+        System.out.println("Processing UPI Payment: Rs. " + amount);
+        System.out.println("UPI ID: " + upiId);
+        System.out.println("Payment Successful!");
+    }
+
+    public void generateReceipt() {
+        System.out.println("UPI Receipt Generated.");
+    }
+}
+
+class NetBankingPayment implements IPayment {
+    String bankName;
+
+    public void paymentProcess(double amount) {
+        System.out.println("Processing Net Banking Payment: Rs. " + amount);
+        System.out.println("Bank: " + bankName);
+        System.out.println("Payment Successful!");
+    }
+
+    public void generateReceipt() {
+        System.out.println("Net Banking Receipt Generated.");
+    }
+}
+
+class PaymentService {
+    void makePayment(IPayment payment, double amount) {
+        payment.paymentProcess(amount);
+        payment.generateReceipt();
     }
 }
