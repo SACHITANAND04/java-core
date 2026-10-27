@@ -601,114 +601,190 @@
 //DATE: 24OCT 2026 
 //INTERFACE ABOUT PAYMENT METHOD..:
 
-import java.util.Scanner;
+// import java.util.Scanner;
+
+// public class main {
+//     public static void main(String[] args) {
+
+//         Scanner sc = new Scanner(System.in);
+
+//         PaymentService service = new PaymentService();
+
+//         System.out.println(" PAYMENT SYSTEM");
+//         System.out.println("1. Credit Card");
+//         System.out.println("2. UPI");
+//         System.out.println("3. Net Banking");
+
+//         System.out.print("Choose payment method: ");
+//         int choice = sc.nextInt();
+
+//         System.out.print("Enter amount: ");
+//         double amount = sc.nextDouble();
+//         sc.nextLine();
+
+//         switch (choice) {
+
+//             case 1:
+//                 CreditCardPayment card = new CreditCardPayment();
+
+//                 System.out.print("Enter card number: ");
+//                 card.cardNumber = sc.nextLine();
+
+//                 service.makePayment(card, amount);
+//                 break;
+
+//             case 2:
+//                 UpiPayment upi = new UpiPayment();
+
+//                 System.out.print("Enter UPI ID: ");
+//                 upi.upiId = sc.nextLine();
+
+//                 service.makePayment(upi, amount);
+//                 break;
+
+//             case 3:
+//                 NetBankingPayment bank = new NetBankingPayment();
+
+//                 System.out.print("Enter bank name: ");
+//                 bank.bankName = sc.nextLine();
+
+//                 service.makePayment(bank, amount);
+//                 break;
+
+//             default:
+//                 System.out.println("Invalid payment choice!");
+//         }
+
+//         sc.close();
+//     }
+// }
+
+// interface IPayment {
+//     void paymentProcess(double amount);
+//     void generateReceipt();
+// }
+
+// class CreditCardPayment implements IPayment {
+//     String cardNumber;
+
+//     public void paymentProcess(double amount) {
+//         System.out.println("Processing Credit Card Payment: Rs. " + amount);
+//         System.out.println("Card Number: " + cardNumber);
+//         System.out.println("Payment Successful!");
+//     }
+
+//     public void generateReceipt() {
+//         System.out.println("Credit Card Receipt Generated.");
+//     }
+// }
+
+// class UpiPayment implements IPayment {
+//     String upiId;
+
+//     public void paymentProcess(double amount) {
+//         System.out.println("Processing UPI Payment: Rs. " + amount);
+//         System.out.println("UPI ID: " + upiId);
+//         System.out.println("Payment Successful!");
+//     }
+
+//     public void generateReceipt() {
+//         System.out.println("UPI Receipt Generated.");
+//     }
+// }
+
+// class NetBankingPayment implements IPayment {
+//     String bankName;
+
+//     public void paymentProcess(double amount) {
+//         System.out.println("Processing Net Banking Payment: Rs. " + amount);
+//         System.out.println("Bank: " + bankName);
+//         System.out.println("Payment Successful!");
+//     }
+
+//     public void generateReceipt() {
+//         System.out.println("Net Banking Receipt Generated.");
+//     }
+// }
+
+// class PaymentService {
+//     void makePayment(IPayment payment, double amount) {
+//         payment.paymentProcess(amount);
+//         payment.generateReceipt();
+//     }
+// }
+
+
+
+//ACCESS MODIFIERS...:
+//PUBLIC CLASS..:
+
+// public class main{
+//     public static void main(String[] args){
+//         Student S = new Student();
+      
+//         S.name = "Ambikaa";
+//         S.display();
+//     }
+// }
+
+// class Student{
+//     public String name;
+//     public void display(){
+//         System.out.println("Name : " + name);
+//     }
+// }
+
+
+//PRIVATE ACCESS MODIFIERS..:
+// public class main{
+//     public static void main(String[] args){
+//         Student S = new Student();
+
+//         S.display();
+//     }
+// }
+
+// class Student{
+//     private int age = 21;
+//     public void display(){
+//         System.out.println("Age:" + age);
+//     }
+// }
+
+
+//PROTECTED ACCESS MODIFIERS..:
+
+// public class main{
+//     public static void main(String[] args){
+//         Student S = new Student();
+//         S.display();
+//     }
+// }
+
+// class person{
+//     protected String name = "Ambikaa";
+// }
+
+// class Student extends person{
+//     public void display(){
+//         System.out.println("Name :" + name);
+//     }
+// }
+
+
+//DEFAULT ACCESS MODIFIERS..:
 
 public class main {
-    public static void main(String[] args) {
+    public static void main(String [] args){
+        Student S = new Student();
+        S.display();
 
-        Scanner sc = new Scanner(System.in);
-
-        PaymentService service = new PaymentService();
-
-        System.out.println("===== PAYMENT SYSTEM =====");
-        System.out.println("1. Credit Card");
-        System.out.println("2. UPI");
-        System.out.println("3. Net Banking");
-
-        System.out.print("Choose payment method: ");
-        int choice = sc.nextInt();
-
-        System.out.print("Enter amount: ");
-        double amount = sc.nextDouble();
-        sc.nextLine();
-
-        switch (choice) {
-
-            case 1:
-                CreditCardPayment card = new CreditCardPayment();
-
-                System.out.print("Enter card number: ");
-                card.cardNumber = sc.nextLine();
-
-                service.makePayment(card, amount);
-                break;
-
-            case 2:
-                UpiPayment upi = new UpiPayment();
-
-                System.out.print("Enter UPI ID: ");
-                upi.upiId = sc.nextLine();
-
-                service.makePayment(upi, amount);
-                break;
-
-            case 3:
-                NetBankingPayment bank = new NetBankingPayment();
-
-                System.out.print("Enter bank name: ");
-                bank.bankName = sc.nextLine();
-
-                service.makePayment(bank, amount);
-                break;
-
-            default:
-                System.out.println("Invalid payment choice!");
-        }
-
-        sc.close();
     }
 }
 
-interface IPayment {
-    void paymentProcess(double amount);
-    void generateReceipt();
-}
-
-class CreditCardPayment implements IPayment {
-    String cardNumber;
-
-    public void paymentProcess(double amount) {
-        System.out.println("Processing Credit Card Payment: Rs. " + amount);
-        System.out.println("Card Number: " + cardNumber);
-        System.out.println("Payment Successful!");
-    }
-
-    public void generateReceipt() {
-        System.out.println("Credit Card Receipt Generated.");
-    }
-}
-
-class UpiPayment implements IPayment {
-    String upiId;
-
-    public void paymentProcess(double amount) {
-        System.out.println("Processing UPI Payment: Rs. " + amount);
-        System.out.println("UPI ID: " + upiId);
-        System.out.println("Payment Successful!");
-    }
-
-    public void generateReceipt() {
-        System.out.println("UPI Receipt Generated.");
-    }
-}
-
-class NetBankingPayment implements IPayment {
-    String bankName;
-
-    public void paymentProcess(double amount) {
-        System.out.println("Processing Net Banking Payment: Rs. " + amount);
-        System.out.println("Bank: " + bankName);
-        System.out.println("Payment Successful!");
-    }
-
-    public void generateReceipt() {
-        System.out.println("Net Banking Receipt Generated.");
-    }
-}
-
-class PaymentService {
-    void makePayment(IPayment payment, double amount) {
-        payment.paymentProcess(amount);
-        payment.generateReceipt();
+class Student{
+    int age = 21;
+    void display(){
+        System.out.println("Age :" + age);
     }
 }
