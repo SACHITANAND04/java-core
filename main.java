@@ -735,7 +735,7 @@
 // }
 
 
-//PRIVATE ACCESS MODIFIERS..:
+// PRIVATE ACCESS MODIFIERS..:
 // public class main{
 //     public static void main(String[] args){
 //         Student S = new Student();
@@ -774,17 +774,69 @@
 
 //DEFAULT ACCESS MODIFIERS..:
 
-public class main {
-    public static void main(String [] args){
-        Student S = new Student();
-        S.display();
+// public class main {
+//     public static void main(String [] args){
+//         Student S = new Student();
+//         S.display();
 
+//     }
+// }
+
+// class Student{
+//     int age = 21;
+//     void display(){
+//         System.out.println("Age :" + age);
+//     }
+// }
+
+
+
+//DATE : 27 OCT 2026..:
+//ENCAPSULATION..:
+
+public class main {
+    public static void main(String[] args) {
+
+        BankAccount obj = new BankAccount("12345", 1000);
+
+        obj.deposit(1000);
+        obj.withdraw(1050);
+
+        System.out.println("Account Number: " + obj.getAccountNumber());
+        System.out.println("Final Balance: " + obj.getBalance());
     }
 }
 
-class Student{
-    int age = 21;
-    void display(){
-        System.out.println("Age :" + age);
+class BankAccount {
+    private double balance;
+    private String accountNumber;
+
+    public BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance!");
+        }
     }
 }
