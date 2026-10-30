@@ -793,50 +793,111 @@
 
 //DATE : 27 OCT 2026..:
 //ENCAPSULATION..:
+//Learned Encapsulation in Java using BankAccount..:
 
-public class main {
+// public class main {
+//     public static void main(String[] args) {
+
+//         BankAccount obj = new BankAccount("12345", 1000);
+
+//         obj.deposit(1000);
+//         obj.withdraw(1050);
+
+//         System.out.println("Account Number: " + obj.getAccountNumber());
+//         System.out.println("Final Balance: " + obj.getBalance());
+//     }
+// }
+
+// class BankAccount {
+//     private double balance;
+//     private String accountNumber;
+
+//     public BankAccount(String accountNumber, double balance) {
+//         this.accountNumber = accountNumber;
+//         this.balance = balance;
+//     }
+
+//     public String getAccountNumber() {
+//         return accountNumber;
+//     }
+
+//     public double getBalance() {
+//         return balance;
+//     }
+
+//     public void deposit(double amount) {
+//         if (amount > 0) {
+//             balance += amount;
+//             System.out.println("Deposited: " + amount);
+//         }
+//     }
+
+//     public void withdraw(double amount) {
+//         if (amount > 0 && amount <= balance) {
+//             balance -= amount;
+//             System.out.println("Withdrawn: " + amount);
+//         } else {
+//             System.out.println("Insufficient balance!");
+//         }
+//     }
+// }
+
+
+//DATE: 29 OCT 2026..
+
+//WRAPPER CLAASES...:
+
+// public class main{
+//     public static void main(String[] args){
+//         int num = 100;
+//         Integer wnum = Integer.valueOf(num);
+
+//         String age = "100";
+//         int res = Integer.parseInt(age);
+//         System.out.println(res);
+//         System.out.println(wnum);
+
+
+//     }
+// }
+
+
+//STRING...:
+//STRING CONCATENATION..:
+
+// public class main{
+//     public static void main(String[] args) {
+//         String str = "Sachit";
+//         str.concat("Ambulgekar");
+//         System.out.println(str.concat("Ambulgekar"));
+//     }
+// }
+
+
+ //STRING METHODS..:
+
+ public class main {
     public static void main(String[] args) {
+        String name = "  sachit";
 
-        BankAccount obj = new BankAccount("12345", 1000);
+        // System.out.println(name.charAt(2));
+        // System.out.println(name.toLowerCase());
+        // System.out.println(name.toUpperCase());
+        // System.out.println(name.trim());
 
-        obj.deposit(1000);
-        obj.withdraw(1050);
+        // System.out.println(name.length());
 
-        System.out.println("Account Number: " + obj.getAccountNumber());
-        System.out.println("Final Balance: " + obj.getBalance());
-    }
-}
+        System.out.println(name.substring(3));
+        System.out.println(name.substring(2,5));
+        System.out.println(name.replace('a', 'o'));
 
-class BankAccount {
-    private double balance;
-    private String accountNumber;
+        System.out.println(name.startsWith("tr"));
 
-    public BankAccount(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: " + amount);
-        }
-    }
-
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrawn: " + amount);
-        } else {
-            System.out.println("Insufficient balance!");
+        String s = "Geeks for Geeks";
+        String[] arr = s.split(" ");
+        for(String str : arr){
+        System.out.println(str);
         }
     }
 }
