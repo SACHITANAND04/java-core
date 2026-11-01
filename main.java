@@ -1,3 +1,6 @@
+
+import java.util.StringTokenizer;
+
 // public class main {
 //     public static void main(String[] args) {
 //         int num1 = 10;
@@ -876,28 +879,72 @@
 
  //STRING METHODS..:
 
- public class main {
-    public static void main(String[] args) {
-        String name = "  sachit";
+//  public class main {
+//     public static void main(String[] args) {
+//         String name = "  sachit";
 
-        // System.out.println(name.charAt(2));
-        // System.out.println(name.toLowerCase());
-        // System.out.println(name.toUpperCase());
-        // System.out.println(name.trim());
+//         // System.out.println(name.charAt(2));
+//         // System.out.println(name.toLowerCase());
+//         // System.out.println(name.toUpperCase());
+//         // System.out.println(name.trim());
 
-        // System.out.println(name.length());
+//         // System.out.println(name.length());
 
-        System.out.println(name.substring(3));
-        System.out.println(name.substring(2,5));
-        System.out.println(name.replace('a', 'o'));
+//         System.out.println(name.substring(3));
+//         System.out.println(name.substring(2,5));
+//         System.out.println(name.replace('a', 'o'));
 
-        System.out.println(name.startsWith("tr"));
+//         System.out.println(name.startsWith("tr"));
 
 
-        String s = "Geeks for Geeks";
-        String[] arr = s.split(" ");
-        for(String str : arr){
-        System.out.println(str);
+//         String s = "Geeks for Geeks";
+//         String[] arr = s.split(" ");
+//         for(String str : arr){
+//         System.out.println(str);
+//         }
+//     }
+// }
+
+
+//DATE: 30 OCT 2026..:
+//STRING BUFFER..:
+
+public class main{
+    public static void main(String[] args){
+        StringBuffer sb = new StringBuffer("Sachit");
+
+        sb.append("  Ambulgekar");
+        System.out.println(sb);
+
+        sb.insert(0,"Hello");
+        System.out.println(sb);
+
+        sb.replace(6,12,"Student");
+        System.out.println(sb);
+
+        // sb.delete(0,3);
+        // System.out.println(sb);
+
+        System.out.println(sb.reverse());
+        System.out.println(sb.length());
+        System.out.println(sb.capacity());
+
+        sb.ensureCapacity(50);
+        System.out.println(sb.capacity());
+
+        sb.trimToSize();
+        System.out.println(sb.capacity());
+
+        //....................................................
+
+
+        String str = "JAVA | DOTNET | C | C#";
+
+        StringTokenizer st = new StringTokenizer(str," ");
+
+        while (st.hasMoreTokens()){
+            System.out.println(st.nextToken());
         }
+
     }
 }
