@@ -1,7 +1,4 @@
 
-import java.util.StringTokenizer;
-
-// public class main {
 //     public static void main(String[] args) {
 //         int num1 = 10;
 //         int num2 = 3;
@@ -909,42 +906,71 @@ import java.util.StringTokenizer;
 //DATE: 30 OCT 2026..:
 //STRING BUFFER..:
 
+// public class main{
+//     public static void main(String[] args){
+//         StringBuffer sb = new StringBuffer("Sachit");
+
+//         sb.append("  Ambulgekar");
+//         System.out.println(sb);
+
+//         sb.insert(0,"Hello");
+//         System.out.println(sb);
+
+//         sb.replace(6,12,"Student");
+//         System.out.println(sb);
+
+//         // sb.delete(0,3);
+//         // System.out.println(sb);
+
+//         System.out.println(sb.reverse());
+//         System.out.println(sb.length());
+//         System.out.println(sb.capacity());
+
+//         sb.ensureCapacity(50);
+//         System.out.println(sb.capacity());
+
+//         sb.trimToSize();
+//         System.out.println(sb.capacity());
+
+//         //....................................................
+
+
+//         String str = "JAVA | DOTNET | C | C#";
+
+//         StringTokenizer st = new StringTokenizer(str," ");
+
+//         while (st.hasMoreTokens()){
+//             System.out.println(st.nextToken());
+//         }
+
+//     }
+// }
+
+
+//DATE: 01 NOV 2026..:
+
+//PRACTICE ..
+//IF ELSE OF STUDENT GRADE CALCULATOR..:
+
 public class main{
     public static void main(String[] args){
-        StringBuffer sb = new StringBuffer("Sachit");
 
-        sb.append("  Ambulgekar");
-        System.out.println(sb);
+        int marks = 85;
 
-        sb.insert(0,"Hello");
-        System.out.println(sb);
-
-        sb.replace(6,12,"Student");
-        System.out.println(sb);
-
-        // sb.delete(0,3);
-        // System.out.println(sb);
-
-        System.out.println(sb.reverse());
-        System.out.println(sb.length());
-        System.out.println(sb.capacity());
-
-        sb.ensureCapacity(50);
-        System.out.println(sb.capacity());
-
-        sb.trimToSize();
-        System.out.println(sb.capacity());
-
-        //....................................................
-
-
-        String str = "JAVA | DOTNET | C | C#";
-
-        StringTokenizer st = new StringTokenizer(str," ");
-
-        while (st.hasMoreTokens()){
-            System.out.println(st.nextToken());
+        if(marks >= 90){
+            System.out.println("Grade A");
         }
-
+        else if(marks >= 75){
+            System.out.println("Grade B");
+        }
+        else if(marks >= 60){
+            System.out.println("Grade C");
+        }
+        else if(marks >= 35){
+            System.out.println("Pass");
+        }
+        else{
+            System.out.println("Fail");
+        }
     }
 }
