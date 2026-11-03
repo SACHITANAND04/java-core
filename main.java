@@ -978,6 +978,8 @@
 
 //DATE: 02 NOV 2026..:
 //PRACTICE FOR LOOP PRINT STAR PATTERN...:
+//PRINT TRIANGLE...:
+
 
 // public class main{
 //     public static void main(String[] args){
@@ -994,27 +996,47 @@
 
 // }
 
+
+//PRINT DIAMOND...:
+
+// public class main {
+//     public static void main(String[] args) {
+
+//         for(int i=1; i<=3; i++) {
+//             for(int j=i; j<3; j++) {
+//                 System.out.print(" ");
+//             }
+//             for(int j=1; j<=2*i-1; j++) {
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//         }
+
+//         for(int i=2; i>=1; i--) {
+//             for(int j=i; j<3; j++) {
+//                 System.out.print(" ");
+//             }
+//             for(int j=1; j<=2*i-1; j++) {
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
+
+
 public class main {
     public static void main(String[] args) {
 
-        for(int i=1; i<=3; i++) {
-            for(int j=i; j<3; j++) {
-                System.out.print(" ");
-            }
-            for(int j=1; j<=2*i-1; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        int num = 1234;
+        int rev = 0;
+
+        while(num > 0) {
+            int rem = num % 10;
+            rev = rev * 10 + rem;
+            num = num / 10;
         }
 
-        for(int i=2; i>=1; i--) {
-            for(int j=i; j<3; j++) {
-                System.out.print(" ");
-            }
-            for(int j=1; j<=2*i-1; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        System.out.println("Reverse: " + rev);
     }
 }
