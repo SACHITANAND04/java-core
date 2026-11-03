@@ -952,25 +952,69 @@
 //PRACTICE ..
 //IF ELSE OF STUDENT GRADE CALCULATOR..:
 
-public class main{
-    public static void main(String[] args){
+// public class main{
+//     public static void main(String[] args){
 
-        int marks = 85;
+//         int marks = 85;
 
-        if(marks >= 90){
-            System.out.println("Grade A");
+//         if(marks >= 90){
+//             System.out.println("Grade A");
+//         }
+//         else if(marks >= 75){
+//             System.out.println("Grade B");
+//         }
+//         else if(marks >= 60){
+//             System.out.println("Grade C");
+//         }
+//         else if(marks >= 35){
+//             System.out.println("Pass");
+//         }
+//         else{
+//             System.out.println("Fail");
+//         }
+//     }
+// }
+
+
+//DATE: 02 NOV 2026..:
+//PRACTICE FOR LOOP PRINT STAR PATTERN...:
+
+// public class main{
+//     public static void main(String[] args){
+//         int n=5;
+
+//         for(int i=1; i<=n; i++){
+//             for(int j=1; j<=i; j++){
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//         }
+//     }
+
+
+// }
+
+public class main {
+    public static void main(String[] args) {
+
+        for(int i=1; i<=3; i++) {
+            for(int j=i; j<3; j++) {
+                System.out.print(" ");
+            }
+            for(int j=1; j<=2*i-1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-        else if(marks >= 75){
-            System.out.println("Grade B");
-        }
-        else if(marks >= 60){
-            System.out.println("Grade C");
-        }
-        else if(marks >= 35){
-            System.out.println("Pass");
-        }
-        else{
-            System.out.println("Fail");
+
+        for(int i=2; i>=1; i--) {
+            for(int j=i; j<3; j++) {
+                System.out.print(" ");
+            }
+            for(int j=1; j<=2*i-1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
